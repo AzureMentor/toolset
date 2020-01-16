@@ -4,37 +4,13 @@
 using System;
 using System.IO;
 using System.Globalization;
+using System.Runtime.InteropServices;
 using Microsoft.DotNet.Cli.Utils;
 
 namespace Microsoft.DotNet.Tools.Test.Utilities
 {
     public static class DotnetUnderTest
     {
-        static string _pathToDotnetUnderTest;
-
-        public static string FullName
-        {
-            get
-            {
-                if (_pathToDotnetUnderTest == null)
-                {
-                    _pathToDotnetUnderTest = new Muxer().MuxerPath;
-                }
-                
-                return _pathToDotnetUnderTest;
-            }
-        }
-
-        public static string WithBackwardsCompatibleRuntimes
-        {
-            get
-            {
-                return Path.Combine(
-                    new RepoDirectoriesProvider().Stage2WithBackwardsCompatibleRuntimesDirectory,
-                    "dotnet");
-            }
-        }
-
         public static bool IsLocalized()
         {
             for (var culture = CultureInfo.CurrentUICulture; !culture.Equals(CultureInfo.InvariantCulture); culture = culture.Parent)

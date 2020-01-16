@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <VersionPrefix>$(CliVersionPrefix)</VersionPrefix>
-    <TargetFramework>$(CliTargetFramework)</TargetFramework>
+    <TargetFramework>$(ToolsetTargetFramework)</TargetFramework>
     <GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
     <CopyBuildOutputToPublishDirectory>false</CopyBuildOutputToPublishDirectory>
   </PropertyGroup>
@@ -10,5 +9,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Runtime" Version="$(MicrosoftBuildRuntimePackageVersion)" />
     <PackageReference Include="Microsoft.Build.Localization" Version="$(MicrosoftBuildLocalizationPackageVersion)" />
+    <PackageReference Include="System.Resources.Extensions" Version="$(SystemResourcesExtensionsPackageVersion)" />
   </ItemGroup>
 </Project>
